@@ -2,7 +2,7 @@
 <hr>
 <div style="height:170px;">
     <div class="ct post">新增預告片海報</div>
-    <form action="./apo/add_poster.php" method="post" enctype="multipart/form-data">
+    <form action="./api/add_poster.php" method="post" enctype="multipart/form-data">
 
         <table>
             <tr>
