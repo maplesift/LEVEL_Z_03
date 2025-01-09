@@ -35,8 +35,8 @@ textarea,
 	width: 200px;
 	font-size: 16px;
 	padding: 7px 5px 7px 5px;
-	background: #4C4C4C;
-	color: #E7E7E7;
+	background: #fff7f7;
+	color: #000000;
 	border: none;
 	font: Open Sans, '微軟正黑體';
 	font-weight: 600;
@@ -47,14 +47,15 @@ input[type='submit'],
 input[type='reset'],
 button,
 .button {
-	min-width: 70px;
-	min-height: 40px;
+	min-width: 35px;
+	min-height: 20px;
 	background: #000;
 	color: #fff;
 	border: none;
 	cursor: pointer;
-	font-size: 18px;
+	font-size: 14px;
 	text-decoration: none;
+	margin: 5px 10px;
 }
 
 input[type='button']:hover,
