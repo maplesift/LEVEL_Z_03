@@ -32,7 +32,9 @@
             <div class="movie-item">
 
                 <div style="width:65px">
-                    <img src="./upload/<?=$row['poster'];?>" style="width: 60px;height: 80px;">
+                    <a href="?do=intro&id=<?=$row['id'];?>">
+                        <img src="./upload/<?=$row['poster'];?>" style="width: 60px;height: 80px;">
+                    </a>
                 </div>
                 <div style="width:calc(100% - 65px);">
                     <div>片名:<?=$row['name'];?></div>
@@ -43,7 +45,7 @@
                     <div>上映日期:<?=$row['ondate'];?></div>
                 </div>
                 <div>
-                    <button> 劇情簡介</button>
+                    <button onclick="location.href='?do=intro&id=<?=$row['id'];?>'"> 劇情簡介</button>
                     <button> 線上訂票</button>
                 </div>
             </div>
