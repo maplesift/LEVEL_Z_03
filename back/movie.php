@@ -1,15 +1,15 @@
 <a href="?do=add_movie">新增電影</a>
 <hr>
-<?php
-$rows=$Movie->all(" order by rank");
-foreach ($rows as $idx => $row):
+<div style="height:430px;overflow:auto;">
+    <?php
+    $rows=$Movie->all(" order by rank");
+    foreach ($rows as $idx => $row):
     // 如果不是第一筆 顯示idx-1 如果是則
     $prev=($idx!=0)?$rows[$idx-1]['id']:$row['id'];
     // 如果不是最後一筆 顯示idx+1 如果是則
     $next=($idx!=(count($rows)-1))?$rows[$idx+1]['id']:$row['id'];
- ?>
-<!-- overflow:auto;  -->
-<div style="height:430px;">
+    ?>
+    <!--   -->
     <div style="display:flex;">
         <div style="width:10%">
             <img src="./upload/<?=$row['poster'];?>" style="width:80px;height: 100px;">
@@ -57,6 +57,16 @@ $(".sw").on("click", function() {
 $(".show").on("click", function() {
     let id = $(this).data('id');
     $.post("./api/show.php", {
+        id
+    }, () => {
+        location.reload();
+    })
+})
+
+$(".del").on("click", function() {
+    let id = $(this).data('id');
+    $.post("./api/del.php", {
+        table: 'Movie',
         id
     }, () => {
         location.reload();
