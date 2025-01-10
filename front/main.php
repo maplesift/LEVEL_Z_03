@@ -18,10 +18,13 @@
 
                 </div>
                 <div class='icons'>
-                    <div class="icon"></div>
-                    <div class="icon"></div>
-                    <div class="icon"></div>
-                    <div class="icon"></div>
+                    <?php foreach($posters as $idx =>$poster): ?>
+                    <div class="icon">
+                        <img src="./upload/<?=$poster['img'];?>" alt="">
+                        <div><?=$poster['name'];?>
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
                 <div class="right">
 

@@ -304,11 +304,26 @@ input:focus {
 .icons {
 	width: 320px;
 	display: flex;
+	overflow: hidden;
+	position: relative;
 }
 
 .icon {
 	width: 80px;
 	height: 100px;
-	background-color: #f6ffcb;
-	border-right: 0.5px solid black;
+	/* background-color: #f6ffcb; */
+	/* border-right: 0.5px solid rgb(118, 101, 101); */
+	flex-shrink: 0;
+	text-align: center;
+	position: relative;
+	/* padding-top: 10px; */
+}
+
+.icon img {
+	width: 70px;
+	height: 80px;
+}
+
+.icon div {
+	font-size: 12px;
 }
