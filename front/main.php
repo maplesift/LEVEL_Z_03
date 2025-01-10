@@ -7,7 +7,7 @@
                 $posters=$Poster->all(['sh'=>1]," order by rank");
                 foreach($posters as $idx =>$poster):
                 ?>
-                <div class="poster">
+                <div class="poster" data-ani="<?=$poster['ani'];?>">
                     <img src="./upload/<?=$poster['img'];?>" alt=""><br>
                     <span><?=$poster['name'];?></span>
                 </div>
@@ -35,6 +35,41 @@
 </div>
 <script>
 $('.poster').eq(0).show();
+
+let slider = setInterval(() => {
+    sliders();
+}, 2000);
+
+function sliders() {
+    let now = $(".poster:visible").index();
+    let next = ($(".poster").length == now + 1) ? 0 : now + 1;
+    let ani = $(".poster").eq(next).data('ani');
+
+
+    switch (ani) {
+        case 1:
+            $(".poster").eq(now).fadeOut(750, function() {
+
+                $(".poster").eq(next).fadeIn(750);
+            });
+            break;
+        case 2:
+            $(".poster").eq(now).hide(750, function() {
+
+                $(".poster").eq(next).show(750);
+            });
+
+            break;
+        case 3:
+
+            $(".poster").eq(now).slideUp(750, function() {
+
+                $(".poster").eq(next).slideDown(750);
+            });
+
+            break;
+    }
+}
 </script>
 
 
