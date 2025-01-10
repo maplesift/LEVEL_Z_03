@@ -40,6 +40,7 @@ textarea,
 	border: none;
 	font: Open Sans, '微軟正黑體';
 	font-weight: 600;
+
 }
 
 input[type='button'],
@@ -216,4 +217,18 @@ input:focus {
 
 .wx::selection {
 	cursor: default;
+}
+
+.movie-item {
+	width: 49%;
+	height: 150px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin: 0.25%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 3px;
+	box-sizing: border-box;
+	font-size: 14px;
+	align-content: center;
 }
