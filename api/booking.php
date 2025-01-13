@@ -1,6 +1,14 @@
 <?php include_once "db.php";?>
 
-<div id="info"></div>
+<div id="info">
+    <?php
+for ($i=0; $i <20 ; $i++) { 
+    echo "<div class='seat'>";
+    echo floor($i/5)+1 ."排".($i%5+1)."號";
+    echo "</div>";
+}
+?>
+</div>
 <div id="movieInfo">
     <div>您選擇的電影是：<?=$_GET['name'];?></div>
     <div>您選擇的時刻是：<?=$_GET['date']."&nbsp;&nbsp;".$_GET['session'];?></div>
