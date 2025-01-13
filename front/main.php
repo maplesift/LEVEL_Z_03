@@ -33,6 +33,7 @@
         </div>
     </div>
 </div>
+
 <script>
 $('.poster').eq(0).show();
 
@@ -40,9 +41,14 @@ let slider = setInterval(() => {
     sliders();
 }, 2000);
 
-function sliders() {
+
+
+function sliders(next = -1) {
     let now = $(".poster:visible").index();
-    let next = ($(".poster").length == now + 1) ? 0 : now + 1;
+    if (next == -1) {
+        next = ($(".poster").length == now + 1) ? 0 : now + 1;
+    }
+    this.next = next
     let ani = $(".poster").eq(next).data('ani');
 
 
@@ -70,7 +76,7 @@ function sliders() {
             break;
     }
 }
-
+// 按鈕水平位移
 let total = $(".icon").length;
 let p = 0
 $(".left,.right").on("click", function() {
@@ -89,6 +95,22 @@ $(".left,.right").on("click", function() {
     $(".icon").animate({
         right: p * 80
     });
+})
+// hover 滑鼠fun1移入fun2移出
+$(".icons").hover(
+    function() {
+        clearInterval(slider);
+    },
+    function() {
+        slider = setInterval(() => {
+            sliders();
+        }, 2000);
+    }
+)
+
+$(".icon").on("click", function() {
+    let next = $(this).index();
+    sliders(next);
 })
 </script>
 
