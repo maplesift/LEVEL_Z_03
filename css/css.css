@@ -327,3 +327,20 @@ input:focus {
 .icon div {
 	font-size: 12px;
 }
+
+#info {
+	width: 540px;
+	height: 370px;
+}
+
+#movieInfo {
+	width: 540px;
+	height: 100px;
+	margin: auto;
+	background-color: #CCC;
+	padding: 10px 120px;
+}
+
+#booking * {
+	box-sizing: border-box;
+}
