@@ -12,6 +12,7 @@ include_once "api/db.php"
     <title>影城</title>
     <link rel="stylesheet" href="css/css.css">
     <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/js.js"></script>
 </head>
 
 <body>
