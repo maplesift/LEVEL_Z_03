@@ -356,4 +356,24 @@ input:focus {
 	height: 85px;
 	text-align: center;
 	padding: 2px;
+	position: relative;
+}
+
+.null {
+	background-image: url(../icon/03D02.png);
+	background-position: center;
+	background-repeat: no-repeat;
+
+}
+
+.booked {
+	background-image: url(../icon/03D03.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.seat>input {
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }

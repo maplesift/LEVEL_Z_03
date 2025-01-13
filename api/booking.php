@@ -3,8 +3,9 @@
 <div id="info">
     <?php
 for ($i=0; $i <20 ; $i++) { 
-    echo "<div class='seat'>";
+    echo "<div class='seat null'>";
     echo floor($i/5)+1 ."排".($i%5+1)."號";
+    echo "<input type='checkbox' value='$i' >";
     echo "</div>";
 }
 ?>
