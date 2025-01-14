@@ -1,14 +1,28 @@
-<?php include_once "db.php";?>
+<?php include_once "db.php";
+
+$rows=$Order->all(['movie'=>$_GET['name'],'date'=>$_GET['date'],'session'=>$_GET['session']]);
+$seats=[];
+foreach ($rows as $row) {
+    $tmp=unserialize($row['seats']);
+    $seats=array_merge($seats,$tmp);
+}
+// dd($seats);
+?>
 
 <div id="info">
     <?php
-for ($i=0; $i <20 ; $i++) { 
-    echo "<div class='seat null'>";
-    echo floor($i/5)+1 ."排".($i%5+1)."號";
-    echo "<input type='checkbox' value='$i' class='chk' >";
-    echo "</div>";
-}
-?>
+        for ($i=0; $i <20 ; $i++) { 
+            $booked=(in_array($i,$seats))?"booked":"null";
+            echo "<div class='seat $booked'>";
+
+            echo floor($i/5)+1 ."排".($i%5+1)."號";
+            if(!in_array($i,$seats)){
+
+                echo "<input type='checkbox' value='$i' class='chk' >";
+            }
+            echo "</div>";
+        }
+    ?>
 </div>
 <div id="movieInfo">
     <div>您選擇的電影是：<?=$_GET['name'];?></div>
