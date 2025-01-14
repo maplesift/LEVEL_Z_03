@@ -377,3 +377,19 @@ input:focus {
 	bottom: 0;
 	right: 0;
 }
+
+.result {
+	width: 450px;
+	margin: 20px auto;
+	padding: 20px;
+	background-color: #CCC;
+}
+
+.result td {
+	padding: 5px;
+
+}
+
+.result tr:nth-child(odd) {
+	background-color: #999;
+}
