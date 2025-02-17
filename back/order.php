@@ -88,7 +88,7 @@ function qdel() {
     let type = $("input[name='type']:checked").val();
     let data = "";
     switch (type) {
-        case "data":
+        case "date":
             data = $("#date").val();
             break;
         case "movie":
