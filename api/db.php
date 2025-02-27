@@ -4,7 +4,7 @@ session_start();
 
 
 class DB{
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db03";
+    protected $dsn="mysql:host=localhost;charset=utf8;dbname=db03_z03";
     protected $pdo;
     protected $table;
     public static $level=[
@@ -116,6 +116,7 @@ class DB{
             $tmp=$this->a2s($where);
             $sql=$sql . " WHERE " . join(" && ", $tmp);
         }
+
         // **********
         // echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
@@ -134,6 +135,7 @@ class DB{
         return $this->avg('avg',$col,$where);
     }
     function count($where=[]){
+        
         
         return $this->math('count','*',$where);
     }
@@ -157,7 +159,7 @@ class DB{
 }
 
 function q($sql){
-    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db03",'root','');
+    $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=db03_z03",'root','');
     // echo $sql;
     return $pdo->query($sql)->fetchAll();
 }
